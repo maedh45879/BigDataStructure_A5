@@ -1,4 +1,4 @@
-# 🌐 Big Data Infrastructure and Cloud  
+# Big Data Infrastructure and Cloud  
 ## 🧮 Homework 2.7 – NoSQL Data Model Simulation  
 
 This project simulates the **storage size** and **data distribution (sharding)** of different NoSQL database models.  
@@ -12,9 +12,9 @@ The goal is to create a Python program that:
 1. Reads a **JSON Schema** (structure of a collection).  
 2. Uses given **statistics** (number of documents, array lengths, etc.).  
 3. Computes:  
-   - 📏 The size of a document (in bytes)  
-   - 💾 The size of a collection (in GB)  
-   - 🗄️ The total database size  
+   - The size of a document (in bytes)  
+   - The size of a collection (in GB)  
+   - The total database size  
 4. Simulates **sharding** over a cluster of servers to compute:  
    - Average number of documents per server  
    - Average number of distinct key values per server  
