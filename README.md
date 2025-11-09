@@ -37,7 +37,7 @@ The goal is to create a Python program that:
 project/
 │
 ├── homework_2_7.py          # Main Python program
-├── compute_sizes.py          # (optional) Size calculation module
+├── compute_sizes.py          # Size calculation module
 ├── schemas/                  # Folder containing all JSON schemas
 │   ├── db1.json
 │   ├── db2.json
