@@ -46,3 +46,50 @@ project/
 │   ├── db5.json
 │   └── product.json
 └── README.md
+```
+
+---
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Prerequisites
+
+Make sure you have **Python 3.10+** installed.
+
+### 2️⃣ Create and Activate a Virtual Environment
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate   # On Windows
+# source .venv/bin/activate   # On macOS/Linux
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the Project
+
+```bash
+python main.py
+```
+
+You should see output similar to:
+
+```
+Document size (bytes): 1056
+Collection size (GB): 0.09834766387939453
+Database total size (GB): 0.09834766387939453
+{'collection': 'Prod', 'sharding_key': 'IDP', 'nb_servers': 1000, 'avg_docs_per_server': 100.0, 'avg_distinct_key_values_per_server': 100.0}
+{'collection': 'Prod', 'sharding_key': 'brand', 'nb_servers': 1000, 'avg_docs_per_server': 100.0, 'avg_distinct_key_values_per_server': 5.0}
+```
+
+### 5️⃣ Exit the Virtual Environment
+
+When finished, deactivate the virtual environment:
+
+```bash
+deactivate
+```
