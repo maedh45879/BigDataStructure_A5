@@ -165,35 +165,20 @@ def compute_sharding_stats(
 # ---------------------------------------------------------------------------
 
 def example() -> None:
-    # Example: load a Product JSON schema from schemas/product.json
-    product_schema_path = Path("schemas/product.json")
-    if not product_schema_path.exists():
-        print("schemas/product.json not found, skip example.")
-        return
+    base = Path("schemas")
 
-    product_schema = load_json_schema(product_schema_path)
-
-    # Adapt these stats with the real numbers from the subject
+    # 1) Load product schema
+    product_schema = load_json_schema(base / "product.json")
     product_stats = CollectionStats(
         nb_documents=10**5,
-        avg_array_lengths={
-            # example: path "categories" (if your schema has "categories": { "type": "array", ... })
-            "categories": 2,
-        },
-        sharding_key_cardinality={
-            "IDP": 10**5,
-            "brand": 5000,
-        },
+        avg_array_lengths={"categories": 2},
+        sharding_key_cardinality={"IDP": 10**5, "brand": 5000},
     )
-
-    product_collection = CollectionModel(
-        name="Prod",
-        schema=product_schema,
-        stats=product_stats,
-    )
+    product_collection = CollectionModel("Prod", product_schema, product_stats)
 
     db = DatabaseModel()
     db.add_collection(product_collection)
+    # db.add_collection(stock_collection)
 
     print("Document size (bytes):", product_collection.document_size_bytes())
     print("Collection size (GB):", product_collection.size_gb())
@@ -202,7 +187,6 @@ def example() -> None:
     for key in ["IDP", "brand"]:
         stats = compute_sharding_stats(product_collection, key, nb_servers=1000)
         print(stats)
-
 
 if __name__ == "__main__":
     example()

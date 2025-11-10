@@ -36,7 +36,7 @@ The goal is to create a Python program that:
 ```bash
 project/
 │
-├── homework_2_7.py          # Main Python program
+├── main.py          # Main Python program
 ├── compute_sizes.py          # Size calculation module
 ├── schemas/                  # Folder containing all JSON schemas
 │   ├── db1.json
