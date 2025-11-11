@@ -1,9 +1,0 @@
-{
-  "collections": [
-    { "name": "Product",   "nb_documents": 100000, "avg_array_lengths": { "categories": 2 }, "sharding_key_cardinality": { "IDP": 100000, "brand": 5000 } },
-    { "name": "Stock",     "nb_documents": 400000, "avg_array_lengths": {},                  "sharding_key_cardinality": { "IDP": 100000, "IDW": 200 } },
-    { "name": "OrderLine", "nb_documents": 800000, "avg_array_lengths": {},                  "sharding_key_cardinality": { "IDC": 100000, "IDP": 100000 } },
-    { "name": "Client",    "nb_documents": 100000, "avg_array_lengths": {},                  "sharding_key_cardinality": { "IDC": 100000 } },
-    { "name": "Warehouse", "nb_documents": 200,     "avg_array_lengths": {},                  "sharding_key_cardinality": { "IDW": 200 } }
-  ]
-}
