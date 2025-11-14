@@ -1,0 +1,29 @@
+{
+  "Product": {
+    "allOf": [
+      { "$ref": "product.json" },
+      {
+        "properties": {
+          "orderLines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "IDC": { "type": "integer" },
+                "date": { "type": "string", "format": "date" },
+                "quantity": { "type": "integer" },
+                "deliveryDate": { "type": "string", "format": "date" },
+                "comment": { "type": "string" },
+                "grade": { "type": "integer" }
+              },
+              "required": ["IDC", "date", "quantity"]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "Stock": { "$ref": "db1.json#/Stock" },
+  "Warehouse": { "$ref": "db1.json#/Warehouse" },
+  "Client": { "$ref": "db1.json#/Client" }
+}

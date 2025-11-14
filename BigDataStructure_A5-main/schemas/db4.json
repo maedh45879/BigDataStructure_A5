@@ -1,0 +1,18 @@
+{
+  "Stock": { "$ref": "db1.json#/Stock" },
+  "Warehouse": { "$ref": "db1.json#/Warehouse" },
+  "OrderLine": {
+    "type": "object",
+    "properties": {
+      "IDC": { "type": "integer" },
+      "date": { "type": "string", "format": "date" },
+      "quantity": { "type": "integer" },
+      "deliveryDate": { "type": "string", "format": "date" },
+      "comment": { "type": "string" },
+      "grade": { "type": "integer" },
+      "product": { "$ref": "product.json" }
+    },
+    "required": ["IDC", "date", "quantity", "product"]
+  },
+  "Client": { "$ref": "db1.json#/Client" }
+}
