@@ -26,7 +26,7 @@ The goal is to create a Python program that:
 | Name | Role | Main Tasks |
 |------|------|------------|
 | **Manon AUBRY** | JSON Schemas | Create DB1–DB5 JSON schemas and validate them |
-| **Devaraj RAMAMMOORTHY** | Size Computation | Develop functions for document, collection, and database size |
+| **Devaraj RAMAMMOORTHY** & **Mehdi MAMLOUK** | Size Computation | Develop functions for document, collection, and database size |
 | **Sandeep PIDUGU** | Sharding & Integration | Implement sharding simulation and integrate all modules |
 
 ---
