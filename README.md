@@ -46,7 +46,11 @@ the STATS and sizing constants from Homework 1 so it can run standalone.
 ---
 
 ## How to run
-1) (Optional) Activate a virtual environment.
+1) (Optional) Activate a virtual environment (on Windows Powershell).
+```
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
 2) Install requirements: `pip install -r requirements.txt`
 3) Run the simulator (text):
 ```bash
