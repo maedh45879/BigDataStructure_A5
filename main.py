@@ -189,4 +189,6 @@ def example() -> None:
         print(stats)
 
 if __name__ == "__main__":
-    example()
+    from query_simulator.runner import run_cli
+
+    run_cli()
