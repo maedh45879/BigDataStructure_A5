@@ -19,6 +19,23 @@ Build a Python tool that, given a JSON schema and a few sizing stats, reports th
    - Average number of documents per server
    - Average number of distinct key values per server
 
+### How the code works (by file and function)
+
+- `main.py`
+  - `load_json_schema(path)`: opens a JSON schema file from `schemas/` and returns the parsed dict.
+  - `CollectionStats`: data class carrying inputs for a collection (document count, average array lengths, sharding key cardinalities).
+  - `primitive_value_size(json_type, format_)`: maps primitive JSON types to byte sizes (number/integer = 8B, string = 80B, date strings = 20B, boolean/null = 8B).
+  - `compute_document_size_bytes(schema, stats, prefix)`: recursively walks a JSON schema to sum bytes for each field; uses `avg_array_lengths` to expand arrays and adds a small overhead per object property.
+  - `compute_collection_size_gb(schema, stats)`: multiplies one document’s bytes by `nb_documents` and converts to GB.
+  - `CollectionModel`: wraps a schema and stats; exposes `document_size_bytes()` and `size_gb()` helpers.
+  - `DatabaseModel`: holds multiple collections and aggregates `total_size_gb()`.
+  - `compute_sharding_stats(coll, sharding_key, nb_servers)`: estimates average documents and distinct sharding-key values per server for a given key.
+  - `example()`: loads `schemas/product.json`, fills `CollectionStats`, prints size calculations, and runs sharding simulations for two keys (`IDP`, `brand`).
+- `schemas/*.json`
+  - JSON schemas defining the structure of each collection (e.g., `product.json`).
+- `requirements.txt`
+  - Minimal dependencies to run the tool.
+
 ---
 
 ## Team Contributions
