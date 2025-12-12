@@ -25,10 +25,9 @@ Build a Python tool that, given a JSON schema and a few sizing stats, reports th
 
 | Name | Role | Main Tasks |
 |------|------|------------|
-| Manon AUBRY | JSON Schemas | Create and validate schemas for DB1–DB5 |
-| Devaraj RAMAMMOORTHY | Size Computation | Implement document, collection, and database sizing logic in `compute_sizes.py` |
-| Sandeep PIDUGU | Sharding & Integration | Build sharding simulation and integrate modules in `main.py` |
-| Mehdi | Documentation & Testing | Maintain README and demo scripts, and add regression checks to keep calculations stable |
+| **Manon AUBRY** | JSON Schemas | Create DB1–DB5 JSON schemas and validate them |
+| **Devaraj RAMAMMOORTHY** & **Mehdi MAMLOUK** | Size Computation | Develop functions for document, collection, and database size |
+| **Sandeep PIDUGU** | Sharding & Integration | Implement sharding simulation and integrate all modules |
 
 ---
 
@@ -36,10 +35,17 @@ Build a Python tool that, given a JSON schema and a few sizing stats, reports th
 
 ```bash
 project/
-├── main.py               # Entry point
-├── compute_sizes.py      # Size calculation engine
-├── schemas/              # JSON schemas (db1.json, product.json, etc.)
-└── requirements.txt      # Dependencies
+│
+├── main.py                  # Main Python program
+├── schemas/                 # Folder containing all JSON schemas
+│   ├── db1.json
+│   ├── db2.json
+│   ├── db3.json
+│   ├── db4.json
+│   ├── db5.json
+│   └── product.json
+├── requirements.txt         # Python dependencies
+└── README.md
 ```
 
 ---
