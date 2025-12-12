@@ -47,7 +47,7 @@ the STATS and sizing constants from Homework 1 so it can run standalone.
 
 ## How to run
 1) (Optional) Activate a virtual environment (on Windows Powershell).
-```
+```bash
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
