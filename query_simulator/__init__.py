@@ -17,10 +17,18 @@ from .config import (
     NETWORK_MULTIPLIER,
     SHARDING_ACCESS_FRACTION,
 )
-from .models import QuerySpec, QueryComponent, CostBreakdown, QueryCostResult
+from .models import QuerySpec, QueryComponent, CostBreakdown, QueryCostResult, AggregateResult
 from .costs import QueryCostModel
 from .queries import default_queries
 from .runner import simulate_queries, format_cost_results
+from .aggregate import (
+    aggregate_with_sharding,
+    aggregate_without_sharding,
+    estimate_filter_selectivity,
+    estimate_group_cardinality,
+    estimate_shuffle_volume_gb,
+    estimate_reduce_volume_gb,
+)
 
 __all__ = [
     "STATS",
@@ -37,8 +45,15 @@ __all__ = [
     "QueryComponent",
     "CostBreakdown",
     "QueryCostResult",
+    "AggregateResult",
     "QueryCostModel",
     "default_queries",
     "simulate_queries",
     "format_cost_results",
+    "aggregate_with_sharding",
+    "aggregate_without_sharding",
+    "estimate_filter_selectivity",
+    "estimate_group_cardinality",
+    "estimate_shuffle_volume_gb",
+    "estimate_reduce_volume_gb",
 ]

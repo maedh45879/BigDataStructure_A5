@@ -27,6 +27,12 @@ class CollectionStats:
     avg_array_lengths: Dict[str, int] = field(default_factory=dict)
     # cardinality of sharding keys (ex: {"IDP": 100000, "brand": 5000})
     sharding_key_cardinality: Dict[str, int] = field(default_factory=dict)
+    # optional field cardinalities for aggregation/grouping (ex: {"brand": 5000})
+    field_cardinality: Dict[str, int] = field(default_factory=dict)
+    # optional field selectivities for equality filters (ex: {"brand": 0.0005})
+    field_selectivity: Dict[str, float] = field(default_factory=dict)
+    # active sharding key for the collection, if applicable (ex: "IDP")
+    sharding_key: Optional[str] = None
 
 
 # ---------------------------------------------------------------------------
