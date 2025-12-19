@@ -1,0 +1,30 @@
+{
+  "schema_set": "default",
+  "queries": [
+    {
+      "name": "Q1_movies_by_genre",
+      "description": "Filter movies by a specific genre.",
+      "frequency": 5
+    },
+    {
+      "name": "Q2_reviews_for_movie",
+      "description": "Fetch reviews for a target movie.",
+      "frequency": 10
+    },
+    {
+      "name": "Q3_movie_review_join",
+      "description": "Join movies with their reviews.",
+      "frequency": 2
+    },
+    {
+      "name": "Q4_avg_rating_by_movie",
+      "description": "Aggregate average rating per movie.",
+      "frequency": 1
+    },
+    {
+      "name": "Q5_top_movies_with_titles",
+      "description": "Aggregate ratings then join with movie titles.",
+      "frequency": 1
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "cluster": {
+    "nb_servers": 1000,
+    "sharding_access_fraction": 0.1
+  },
+  "collections": {
+    "Movie": {
+      "nb_documents": 100000,
+      "avg_array_lengths": {
+        "genres": 2,
+        "reviews": 50
+      },
+      "sharding_key_cardinality": {
+        "movieId": 100000
+      },
+      "field_cardinality": {
+        "movieId": 100000,
+        "genre": 20
+      },
+      "field_selectivity": {
+        "genre": 0.05
+      },
+      "sharding_key": "movieId"
+    },
+    "Review": {
+      "nb_documents": 10000000,
+      "sharding_key_cardinality": {
+        "movieId": 100000
+      },
+      "field_cardinality": {
+        "movieId": 100000,
+        "userId": 1000000,
+        "rating": 10
+      },
+      "sharding_key": "movieId"
+    },
+    "User": {
+      "nb_documents": 1000000,
+      "sharding_key_cardinality": {
+        "userId": 1000000
+      },
+      "field_cardinality": {
+        "userId": 1000000,
+        "country": 50
+      },
+      "field_selectivity": {
+        "country": 0.02
+      },
+      "sharding_key": "userId"
+    }
+  }
+}

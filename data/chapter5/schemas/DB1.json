@@ -1,0 +1,32 @@
+{
+  "Movie": {
+    "type": "object",
+    "properties": {
+      "movieId": { "type": "integer" },
+      "title": { "type": "string" },
+      "genre": { "type": "string" },
+      "releaseDate": { "type": "string", "format": "date" }
+    },
+    "required": ["movieId", "title", "genre"]
+  },
+  "Review": {
+    "type": "object",
+    "properties": {
+      "reviewId": { "type": "integer" },
+      "movieId": { "type": "integer" },
+      "userId": { "type": "integer" },
+      "rating": { "type": "integer" },
+      "reviewDate": { "type": "string", "format": "date" }
+    },
+    "required": ["reviewId", "movieId", "userId", "rating"]
+  },
+  "User": {
+    "type": "object",
+    "properties": {
+      "userId": { "type": "integer" },
+      "country": { "type": "string" },
+      "signupDate": { "type": "string", "format": "date" }
+    },
+    "required": ["userId", "country"]
+  }
+}
