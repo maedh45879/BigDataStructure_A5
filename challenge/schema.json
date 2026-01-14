@@ -1,0 +1,23 @@
+{
+  "collections": {
+    "Product": {
+      "primary_key": "IDP",
+      "fields": {
+        "IDP": { "type": "integer", "avg_size": 8 },
+        "brand": { "type": "string", "avg_size": 40 },
+        "categorie": { "type": "string", "avg_size": 40 },
+        "description": { "type": "string", "avg_size": 200 },
+        "price": { "type": "number", "avg_size": 8 }
+      }
+    },
+    "OrderLine": {
+      "primary_key": "IDL",
+      "fields": {
+        "IDL": { "type": "integer", "avg_size": 8 },
+        "IDP": { "type": "integer", "avg_size": 8 },
+        "IDC": { "type": "integer", "avg_size": 8 },
+        "quantity": { "type": "integer", "avg_size": 8 }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "queries": [
+    {
+      "id": "Q1",
+      "sql": "SELECT description FROM Product WHERE categorie = 'smartphone';",
+      "frequency": 1000
+    },
+    {
+      "id": "Q2",
+      "sql": "SELECT ol.quantity, p.price FROM OrderLine ol JOIN Product p ON ol.IDP = p.IDP WHERE p.brand = 'apple' AND ol.IDC = 125;",
+      "frequency": 100
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "cluster": {
+    "nb_servers": 1000,
+    "sharding_access_fraction": 0.1
+  },
+  "collections": {
+    "Product": {
+      "nb_documents": 100000,
+      "distinct_values": {
+        "IDP": 100000,
+        "brand": 5000,
+        "categorie": 100
+      },
+      "avg_array_lengths": {
+        "orderLines": 40
+      }
+    },
+    "OrderLine": {
+      "nb_documents": 4000000,
+      "distinct_values": {
+        "IDP": 100000,
+        "IDC": 1000000
+      }
+    }
+  },
+  "query_frequencies": {
+    "Q1": 1000,
+    "Q2": 100
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "denormalizations": [
+    {
+      "id": "D1",
+      "description": "Normalized: Product + OrderLine",
+      "collections": {
+        "Product": {
+          "sharding_key": "IDP",
+          "indexes": ["brand", "categorie"]
+        },
+        "OrderLine": {
+          "sharding_key": "IDP",
+          "indexes": ["IDC"]
+        }
+      },
+      "embeds": []
+    },
+    {
+      "id": "D2",
+      "description": "OrderLine embeds Product",
+      "collections": {
+        "OrderLine": {
+          "sharding_key": "IDP",
+          "indexes": ["IDC", "product.brand"]
+        }
+      },
+      "embeds": [
+        { "from": "Product", "to": "OrderLine", "path": "product", "cardinality": "one" }
+      ]
+    },
+    {
+      "id": "D3",
+      "description": "Product embeds OrderLine array",
+      "collections": {
+        "Product": {
+          "sharding_key": "IDP",
+          "indexes": ["brand", "categorie"]
+        }
+      },
+      "embeds": [
+        { "from": "OrderLine", "to": "Product", "path": "orderLines", "cardinality": "many" }
+      ]
+    },
+    {
+      "id": "D4",
+      "description": "Redundant: Product embeds OrderLine and OrderLine remains",
+      "collections": {
+        "Product": {
+          "sharding_key": "IDP",
+          "indexes": ["brand", "categorie"]
+        },
+        "OrderLine": {
+          "sharding_key": "IDP",
+          "indexes": ["IDC"]
+        }
+      },
+      "embeds": [
+        { "from": "OrderLine", "to": "Product", "path": "orderLines", "cardinality": "many" }
+      ]
+    }
+  ]
+}
